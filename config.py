@@ -99,18 +99,19 @@ class ExperimentConfig:
     # --- Embedding model for semantic metrics (sentence-transformers) ---
     embedding_model: str = "sentence-transformers/all-MiniLM-L6-v2"
 
-    # --- Paths ---
-    results_dir: str = "results"
-    raw_responses_dir: str = "results/raw_responses"
-    metrics_dir: str = "results/metrics"
-    plots_dir: str = "results/plots"
+    # --- Paths (beegfs on UH cluster) ---
+    beegfs_base: str = "/beegfs/general/kg23aay/stochastic_exploration"
+    results_dir: str = "/beegfs/general/kg23aay/stochastic_exploration/results"
+    raw_responses_dir: str = "/beegfs/general/kg23aay/stochastic_exploration/results/raw_responses"
+    metrics_dir: str = "/beegfs/general/kg23aay/stochastic_exploration/results/metrics"
+    plots_dir: str = "/beegfs/general/kg23aay/stochastic_exploration/results/plots"
 
     # --- Timeouts ---
     generation_timeout: int = 300      # seconds per single generation
 
     def ensure_dirs(self):
         """Create all output directories."""
-        for d in [self.results_dir, self.raw_responses_dir,
+        for d in [self.beegfs_base, self.results_dir, self.raw_responses_dir,
                   self.metrics_dir, self.plots_dir]:
             os.makedirs(d, exist_ok=True)
 

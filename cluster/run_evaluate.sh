@@ -4,41 +4,32 @@
 #
 # Runs AFTER all tier jobs complete (submitted with --dependency by
 # submit_all.sh).  Needs 1 GPU for the embedding model, minimal resources.
+# Outputs to /beegfs/general/kg23aay/stochastic_exploration/results/
 # ===========================================================================
-
-#SBATCH --job-name=stoch-eval
-#SBATCH --partition=gpu                        # ← change to your GPU partition
-#SBATCH --account=your-account                 # ← change to your allocation
-#SBATCH --gres=gpu:1
-#SBATCH --cpus-per-task=8
-#SBATCH --mem=32G
-#SBATCH --time=04:00:00
-#SBATCH --output=logs/evaluate_%j.out
-#SBATCH --error=logs/evaluate_%j.err
-#SBATCH --mail-type=END,FAIL
-#SBATCH --mail-user=your-email@herts.ac.uk     # ← change to your email
 
 set -euo pipefail
 
+BEEGFS_BASE="/beegfs/general/kg23aay"
+CONDA_DIR="${BEEGFS_BASE}/miniconda3"
 PROJECT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
-VENV_DIR="${PROJECT_DIR}/venv"
+CONDA_ENV_NAME="stochastic_exp"
 
-export HF_HOME="${PROJECT_DIR}/.hf_cache"
+export HF_HOME="${BEEGFS_BASE}/hf_cache"
 export TRANSFORMERS_CACHE="${HF_HOME}/hub"
+export PIP_CACHE_DIR="${BEEGFS_BASE}/pip_cache"
+export TMPDIR="${BEEGFS_BASE}/tmp"
 export TOKENIZERS_PARALLELISM=false
 
-if command -v module &>/dev/null; then
-    module purge 2>/dev/null || true
-    module load cuda/12.1 2>/dev/null || true
-    module load python/3.11 2>/dev/null || true
-fi
+# Activate conda
+source "${CONDA_DIR}/etc/profile.d/conda.sh"
+conda activate "${CONDA_ENV_NAME}"
 
-source "${VENV_DIR}/bin/activate"
 cd "${PROJECT_DIR}"
 
 echo "=============================================="
 echo " Stochastic Exploration — Evaluate & Analyze"
 echo " $(date)"
+echo " Output: ${BEEGFS_BASE}/stochastic_exploration/results/"
 echo "=============================================="
 
 # Step 1: Compute stochasticity metrics (needs GPU for embeddings)
@@ -57,4 +48,4 @@ python3 main.py status
 
 echo ""
 echo "All done at $(date)"
-echo "Results in: ${PROJECT_DIR}/results/"
+echo "Results in: ${BEEGFS_BASE}/stochastic_exploration/results/"

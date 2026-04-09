@@ -484,8 +484,8 @@ class ResultAnalyzer:
                                  f"range=[{vals.min():.4f}, {vals.max():.4f}]")
         lines.append("")
         lines.append("=" * 70)
-        lines.append("Plots saved in: results/plots/")
-        lines.append("Data  saved in: results/metrics/")
+        lines.append(f"Plots saved in: {self.cfg.plots_dir}")
+        lines.append(f"Data  saved in: {self.cfg.metrics_dir}")
         lines.append("=" * 70)
 
         return "\n".join(lines)

@@ -5,77 +5,70 @@
 # Run this ONCE before submitting any SLURM jobs:
 #   bash cluster/setup_env.sh
 #
-# What it does:
-#   1. Loads required modules (CUDA, Python)
-#   2. Creates a Python virtual environment
-#   3. Installs all dependencies (PyTorch CUDA, Transformers, etc.)
-#   4. Downloads NLTK data & sentence-transformers embedding model
-#   5. Logs into HuggingFace (needed for gated models: Llama, Gemma)
+# Uses existing miniconda3 at /beegfs/general/kg23aay/miniconda3
+# All outputs go to /beegfs/general/kg23aay/stochastic_exploration/
 # ===========================================================================
 
 set -euo pipefail
 
 # ---------------------------------------------------------------------------
-# CONFIGURATION — adjust these to match your cluster
+# Paths on beegfs
 # ---------------------------------------------------------------------------
+BEEGFS_BASE="/beegfs/general/kg23aay"
+CONDA_DIR="${BEEGFS_BASE}/miniconda3"
 PROJECT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
-VENV_DIR="${PROJECT_DIR}/venv"
+CONDA_ENV_NAME="stochastic_exp"
+OUTPUT_DIR="${BEEGFS_BASE}/stochastic_exploration"
 
-# HuggingFace cache — point to scratch / fast storage to avoid quota issues
-export HF_HOME="${PROJECT_DIR}/.hf_cache"
-
-# CUDA version on your cluster (check with: module avail cuda)
-CUDA_MODULE="cuda/12.1"            # ← adjust if needed
-PYTHON_MODULE="python/3.11"        # ← adjust if needed
-
-# PyTorch CUDA index (must match CUDA_MODULE version)
-TORCH_INDEX="https://download.pytorch.org/whl/cu121"  # ← adjust if needed
+# Caches — keep on beegfs to avoid home quota issues
+export HF_HOME="${BEEGFS_BASE}/hf_cache"
+export PIP_CACHE_DIR="${BEEGFS_BASE}/pip_cache"
+export TMPDIR="${BEEGFS_BASE}/tmp"
+export TRANSFORMERS_CACHE="${HF_HOME}/hub"
 
 echo "=============================================="
 echo " StochasticExploration — Environment Setup"
 echo "=============================================="
-echo " Project dir:  ${PROJECT_DIR}"
-echo " Venv dir:     ${VENV_DIR}"
-echo " HF cache:     ${HF_HOME}"
+echo " Project dir:   ${PROJECT_DIR}"
+echo " Conda dir:     ${CONDA_DIR}"
+echo " Conda env:     ${CONDA_ENV_NAME}"
+echo " Output dir:    ${OUTPUT_DIR}"
+echo " HF cache:      ${HF_HOME}"
+echo " Pip cache:     ${PIP_CACHE_DIR}"
 echo ""
 
 # ---------------------------------------------------------------------------
-# 1. Load modules
+# 1. Initialize conda
 # ---------------------------------------------------------------------------
-echo "[1/6] Loading modules..."
-if command -v module &>/dev/null; then
-    module purge 2>/dev/null || true
-    module load "${CUDA_MODULE}" 2>/dev/null || echo "  ⚠ Could not load ${CUDA_MODULE} — check 'module avail cuda'"
-    module load "${PYTHON_MODULE}" 2>/dev/null || echo "  ⚠ Could not load ${PYTHON_MODULE} — check 'module avail python'"
-    module list 2>&1 | head -10
-else
-    echo "  No module system detected — assuming CUDA and Python are in PATH."
-fi
+echo "[1/6] Initializing conda..."
+source "${CONDA_DIR}/etc/profile.d/conda.sh"
+echo "  Conda version: $(conda --version)"
 
 # ---------------------------------------------------------------------------
-# 2. Create virtual environment
+# 2. Create conda environment
 # ---------------------------------------------------------------------------
 echo ""
-echo "[2/6] Creating virtual environment..."
-if [ -d "${VENV_DIR}" ]; then
-    echo "  Venv already exists — reusing."
+echo "[2/6] Creating conda environment '${CONDA_ENV_NAME}'..."
+if conda env list | grep -q "${CONDA_ENV_NAME}"; then
+    echo "  Environment already exists — reusing."
 else
-    python3 -m venv "${VENV_DIR}"
-    echo "  Created: ${VENV_DIR}"
+    conda create -n "${CONDA_ENV_NAME}" python=3.11 -y -q
+    echo "  Created environment: ${CONDA_ENV_NAME}"
 fi
-source "${VENV_DIR}/bin/activate"
-pip install --upgrade pip setuptools wheel --quiet
+conda activate "${CONDA_ENV_NAME}"
+echo "  Python: $(python3 --version)"
+echo "  Path:   $(which python3)"
 
 # ---------------------------------------------------------------------------
 # 3. Install PyTorch with CUDA support
 # ---------------------------------------------------------------------------
 echo ""
 echo "[3/6] Installing PyTorch (CUDA)..."
-pip install torch --index-url "${TORCH_INDEX}" --quiet
+pip install --upgrade pip setuptools wheel --quiet
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121 --quiet
 
 echo "  PyTorch version: $(python3 -c 'import torch; print(torch.__version__)')"
 echo "  CUDA available:  $(python3 -c 'import torch; print(torch.cuda.is_available())')"
-echo "  GPU count:       $(python3 -c 'import torch; print(torch.cuda.device_count())')"
 
 # ---------------------------------------------------------------------------
 # 4. Install remaining dependencies
@@ -101,10 +94,16 @@ print('  Embedding model downloaded and cached.')
 "
 
 # ---------------------------------------------------------------------------
-# 6. HuggingFace login (required for gated models: Llama, Gemma)
+# 6. Create output directory + HuggingFace login
 # ---------------------------------------------------------------------------
 echo ""
-echo "[6/6] HuggingFace authentication..."
+echo "[6/6] Setting up output directories and HuggingFace auth..."
+
+mkdir -p "${OUTPUT_DIR}/results/raw_responses"
+mkdir -p "${OUTPUT_DIR}/results/metrics"
+mkdir -p "${OUTPUT_DIR}/results/plots"
+echo "  Output dirs created at: ${OUTPUT_DIR}"
+
 echo ""
 echo "  Some models (Llama 3, Gemma 2) are gated and require you to:"
 echo "    1. Create a HuggingFace account at https://huggingface.co"
@@ -134,8 +133,11 @@ echo ""
 echo "=============================================="
 echo " Setup complete!"
 echo ""
+echo " To activate later:  source ${CONDA_DIR}/etc/profile.d/conda.sh && conda activate ${CONDA_ENV_NAME}"
+echo ""
 echo " Next steps:"
-echo "   1. Make sure you have accepted model licenses on HuggingFace"
+echo "   1. Accept model licenses on HuggingFace (Llama 3, Gemma 2)"
 echo "   2. Submit jobs:  bash cluster/submit_all.sh"
 echo "   3. Monitor:      squeue -u \$USER"
+echo "   4. Results at:   ${OUTPUT_DIR}/results/"
 echo "=============================================="

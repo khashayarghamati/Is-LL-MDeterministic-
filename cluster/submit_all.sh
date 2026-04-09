@@ -2,8 +2,10 @@
 # ===========================================================================
 # submit_all.sh — Submit all SLURM jobs for the full experiment.
 #
-# Submits 4 tier jobs (independent, can run in parallel on different nodes)
+# Submits 4 tier jobs (independent, run in parallel on different nodes)
 # then 1 evaluation job that starts only after ALL tiers finish.
+#
+# All outputs go to /beegfs/general/kg23aay/stochastic_exploration/
 #
 # Usage:
 #   bash cluster/submit_all.sh          # Submit all tiers + eval
@@ -17,19 +19,21 @@
 
 set -euo pipefail
 
+BEEGFS_BASE="/beegfs/general/kg23aay"
 PROJECT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+LOG_DIR="${BEEGFS_BASE}/stochastic_exploration/logs"
 cd "${PROJECT_DIR}"
 
-# Create log directory
-mkdir -p logs
+# Create log directory on beegfs
+mkdir -p "${LOG_DIR}"
 
 # =========================================================================
-# ⚠  EDIT THESE to match your cluster's configuration  ⚠
+# Cluster configuration for UH
 # =========================================================================
 PARTITION="gpu"                          # GPU partition name
-ACCOUNT="your-account"                   # Your SLURM account/allocation
-GPU_TYPE="a100"                          # GPU type (a100, v100, rtx3090, etc.)
-EMAIL="your-email@herts.ac.uk"           # Notification email
+ACCOUNT="kg23aay"                        # SLURM account
+GPU_TYPE=""                              # Leave empty if cluster doesn't need gpu type
+EMAIL="kg23aay@herts.ac.uk"              # Notification email
 # =========================================================================
 
 # Tiers to submit (all by default, or from command-line args)
@@ -42,7 +46,8 @@ fi
 echo "=============================================="
 echo " Submitting StochasticExploration Jobs"
 echo " Partition: ${PARTITION}"
-echo " GPU type:  ${GPU_TYPE}"
+echo " Logs:      ${LOG_DIR}"
+echo " Outputs:   ${BEEGFS_BASE}/stochastic_exploration/results/"
 echo " Tiers:     ${TIERS[*]}"
 echo "=============================================="
 echo ""
@@ -56,6 +61,16 @@ declare -A TIER_MEM=(  [1]="32G" [2]="64G" [3]="128G" [4]="256G" )
 declare -A TIER_TIME=( [1]="06:00:00" [2]="18:00:00" [3]="36:00:00" [4]="48:00:00" )
 declare -A TIER_NAME=( [1]="small" [2]="medium" [3]="large" [4]="frontier" )
 
+# Build --gres string (with or without gpu type)
+_gres() {
+    local count=$1
+    if [ -n "${GPU_TYPE}" ]; then
+        echo "gpu:${GPU_TYPE}:${count}"
+    else
+        echo "gpu:${count}"
+    fi
+}
+
 # ---------------------------------------------------------------------------
 # Submit tier jobs
 # ---------------------------------------------------------------------------
@@ -66,12 +81,12 @@ for TIER in "${TIERS[@]}"; do
         --job-name="stoch-t${TIER}-${TIER_NAME[$TIER]}" \
         --partition="${PARTITION}" \
         --account="${ACCOUNT}" \
-        --gres="gpu:${GPU_TYPE}:${TIER_GPUS[$TIER]}" \
+        --gres="$(_gres ${TIER_GPUS[$TIER]})" \
         --cpus-per-task="${TIER_CPUS[$TIER]}" \
         --mem="${TIER_MEM[$TIER]}" \
         --time="${TIER_TIME[$TIER]}" \
-        --output="logs/tier${TIER}_%j.out" \
-        --error="logs/tier${TIER}_%j.err" \
+        --output="${LOG_DIR}/tier${TIER}_%j.out" \
+        --error="${LOG_DIR}/tier${TIER}_%j.err" \
         --mail-type=END,FAIL \
         --mail-user="${EMAIL}" \
         --export=ALL \
@@ -92,12 +107,12 @@ EVAL_JOB_ID=$(sbatch \
     --job-name="stoch-eval" \
     --partition="${PARTITION}" \
     --account="${ACCOUNT}" \
-    --gres="gpu:${GPU_TYPE}:1" \
+    --gres="$(_gres 1)" \
     --cpus-per-task=8 \
     --mem="32G" \
     --time="04:00:00" \
-    --output="logs/evaluate_%j.out" \
-    --error="logs/evaluate_%j.err" \
+    --output="${LOG_DIR}/evaluate_%j.out" \
+    --error="${LOG_DIR}/evaluate_%j.err" \
     --mail-type=END,FAIL \
     --mail-user="${EMAIL}" \
     --dependency="afterok:${DEPENDENCY_STR}" \
@@ -118,8 +133,8 @@ echo " All jobs submitted!"
 echo ""
 echo " Monitor with:"
 echo "   squeue -u \$USER"
-echo "   tail -f logs/tier1_<jobid>.out"
+echo "   tail -f ${LOG_DIR}/tier1_<jobid>.out"
 echo ""
 echo " After completion, results will be in:"
-echo "   ${PROJECT_DIR}/results/"
+echo "   ${BEEGFS_BASE}/stochastic_exploration/results/"
 echo "=============================================="
