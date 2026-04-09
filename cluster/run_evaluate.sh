@@ -11,7 +11,7 @@ set -euo pipefail
 
 BEEGFS_BASE="/beegfs/general/kg23aay"
 CONDA_DIR="${BEEGFS_BASE}/miniconda3"
-PROJECT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+PROJECT_DIR="${BEEGFS_BASE}/Is-LL-MDeterministic-"
 CONDA_ENV_NAME="stochastic_exp"
 
 # Load .env (HF_TOKEN)
