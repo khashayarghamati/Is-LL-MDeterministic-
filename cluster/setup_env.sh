@@ -119,14 +119,14 @@ echo ""
 
 if [ -n "${HF_TOKEN:-}" ]; then
     echo "  HF_TOKEN is already set in environment. Logging in..."
-    huggingface-cli login --token "${HF_TOKEN}"
+    python3 -c "from huggingface_hub import login; login(token='${HF_TOKEN}')"
 else
     echo "  Option A: Run 'huggingface-cli login' interactively now."
     echo "  Option B: Set HF_TOKEN in your environment before submitting jobs."
     echo ""
     read -r -p "  Login interactively now? [y/N] " answer
     if [[ "${answer}" =~ ^[Yy]$ ]]; then
-        huggingface-cli login
+        python3 -c "from huggingface_hub import login; login()"
     else
         echo "  Skipped. Remember to export HF_TOKEN=<your-token> before running jobs."
     fi
