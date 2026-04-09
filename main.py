@@ -32,6 +32,9 @@ import logging
 import sys
 from pathlib import Path
 
+from dotenv import load_dotenv
+load_dotenv()  # Load .env (HF_TOKEN, etc.) into os.environ
+
 from config import ExperimentConfig, ModelSpec, DEFAULT_MODELS
 
 logging.basicConfig(
