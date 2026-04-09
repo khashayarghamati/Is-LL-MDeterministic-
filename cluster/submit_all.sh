@@ -42,7 +42,7 @@ mkdir -p "${LOG_DIR}"
 # Cluster configuration for UH
 # =========================================================================
 PARTITION="gpu"                          # GPU partition name
-ACCOUNT="kg23aay"                        # SLURM account
+ACCOUNT="cs"                             # SLURM account
 GPU_TYPE=""                              # Leave empty if cluster doesn't need gpu type
 EMAIL="kg23aay@herts.ac.uk"              # Notification email
 # =========================================================================
@@ -69,7 +69,7 @@ echo ""
 declare -A TIER_GPUS=( [1]=1  [2]=1  [3]=2  [4]=4 )
 declare -A TIER_CPUS=( [1]=8  [2]=8  [3]=16 [4]=16 )
 declare -A TIER_MEM=(  [1]="32G" [2]="64G" [3]="128G" [4]="256G" )
-declare -A TIER_TIME=( [1]="06:00:00" [2]="18:00:00" [3]="36:00:00" [4]="48:00:00" )
+declare -A TIER_TIME=( [1]="06:00:00" [2]="18:00:00" [3]="36:00:00" [4]="4-00:00:00" )
 declare -A TIER_NAME=( [1]="small" [2]="medium" [3]="large" [4]="frontier" )
 
 # Build --gres string (with or without gpu type)
