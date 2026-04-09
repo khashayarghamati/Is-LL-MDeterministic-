@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+
+# IDE
+.idea/
+
+# HuggingFace cache
+.hf_cache/
+
+# Experiment results (large files)
+results/raw_responses/
+results/metrics/
+results/plots/
+results/*.txt
+
+# SLURM logs
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# NLTK data
+nltk_data/
