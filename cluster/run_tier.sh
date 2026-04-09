@@ -26,6 +26,11 @@ CONDA_DIR="${BEEGFS_BASE}/miniconda3"
 PROJECT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 CONDA_ENV_NAME="stochastic_exp"
 
+# Load .env (HF_TOKEN)
+if [ -f "${PROJECT_DIR}/.env" ]; then
+    set -a; source "${PROJECT_DIR}/.env"; set +a
+fi
+
 export HF_HOME="${BEEGFS_BASE}/hf_cache"
 export TRANSFORMERS_CACHE="${HF_HOME}/hub"
 export PIP_CACHE_DIR="${BEEGFS_BASE}/pip_cache"

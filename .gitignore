@@ -24,6 +24,9 @@ results/*.txt
 # SLURM logs
 logs/
 
+# Secrets
+.env
+
 # OS
 .DS_Store
 Thumbs.db

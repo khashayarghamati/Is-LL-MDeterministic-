@@ -20,6 +20,12 @@ PROJECT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 CONDA_ENV_NAME="stochastic_exp"
 OUTPUT_DIR="${BEEGFS_BASE}/stochastic_exploration"
 
+# Load .env (HF_TOKEN)
+if [ -f "${PROJECT_DIR}/.env" ]; then
+    set -a; source "${PROJECT_DIR}/.env"; set +a
+    echo "  Loaded .env"
+fi
+
 # Caches — keep on beegfs to avoid home quota issues
 export HF_HOME="${BEEGFS_BASE}/hf_cache"
 export PIP_CACHE_DIR="${BEEGFS_BASE}/pip_cache"
