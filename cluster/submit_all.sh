@@ -20,8 +20,19 @@
 set -euo pipefail
 
 BEEGFS_BASE="/beegfs/general/kg23aay"
+CONDA_DIR="${BEEGFS_BASE}/miniconda3"
 PROJECT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 LOG_DIR="${BEEGFS_BASE}/stochastic_exploration/logs"
+
+# Activate conda
+source "${CONDA_DIR}/etc/profile.d/conda.sh"
+conda activate stochastic_exp
+
+# Load .env
+if [ -f "${PROJECT_DIR}/.env" ]; then
+    set -a; source "${PROJECT_DIR}/.env"; set +a
+fi
+
 cd "${PROJECT_DIR}"
 
 # Create log directory on beegfs
