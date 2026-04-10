@@ -1,0 +1,2936 @@
+{
+  "model": "microsoft/Phi-3.5-mini-instruct",
+  "params_billion": 3.8,
+  "family": "phi3",
+  "tier": 2,
+  "config": {
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "max_tokens": 1024,
+    "num_repetitions": 20,
+    "seed": null,
+    "torch_dtype": "float16"
+  },
+  "responses": {
+    "P01": {
+      "angle": "General overview",
+      "prompt": "Explain the current state of artificial intelligence applications in healthcare and their overall impact on patient outcomes.\n\nYou must respond ONLY with a valid JSON object. Do not include any text,\nexplanation, or markdown outside the JSON.  Use exactly this structure:\n\n{\n    \"summary\": \"<2-3 sentence overview>\",\n    \"key_points\": [\n        \"<point 1>\",\n        \"<point 2>\",\n        \"<point 3>\",\n        \"<point 4>\",\n        \"<point 5>\"\n    ],\n    \"challenges\": [\n        \"<challenge 1>\",\n        \"<challenge 2>\",\n        \"<challenge 3>\"\n    ],\n    \"potential_impact\": \"<1-2 sentences about future impact>\",\n    \"confidence_level\": \"<high OR medium OR low>\",\n    \"estimated_timeline\": \"<short-term OR medium-term OR long-term>\"\n}",
+      "repetitions": [
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.004,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 1
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.003,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 2
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.002,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 3
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.002,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 4
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 5
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 6
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 7
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 8
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 9
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 10
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 11
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 12
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 13
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 14
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 15
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 16
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 17
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 18
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 19
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 20
+        }
+      ]
+    },
+    "P02": {
+      "angle": "Medical diagnostics",
+      "prompt": "Analyze how AI-powered diagnostic tools are changing the accuracy and speed of disease detection in clinical settings.\n\nYou must respond ONLY with a valid JSON object. Do not include any text,\nexplanation, or markdown outside the JSON.  Use exactly this structure:\n\n{\n    \"summary\": \"<2-3 sentence overview>\",\n    \"key_points\": [\n        \"<point 1>\",\n        \"<point 2>\",\n        \"<point 3>\",\n        \"<point 4>\",\n        \"<point 5>\"\n    ],\n    \"challenges\": [\n        \"<challenge 1>\",\n        \"<challenge 2>\",\n        \"<challenge 3>\"\n    ],\n    \"potential_impact\": \"<1-2 sentences about future impact>\",\n    \"confidence_level\": \"<high OR medium OR low>\",\n    \"estimated_timeline\": \"<short-term OR medium-term OR long-term>\"\n}",
+      "repetitions": [
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 1
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 2
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 3
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 4
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 5
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 6
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 7
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 8
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 9
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 10
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 11
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 12
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 13
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 14
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 15
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 16
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 17
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 18
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 19
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 20
+        }
+      ]
+    },
+    "P03": {
+      "angle": "Drug discovery",
+      "prompt": "Discuss how artificial intelligence is accelerating pharmaceutical drug discovery and reducing time-to-market for new treatments.\n\nYou must respond ONLY with a valid JSON object. Do not include any text,\nexplanation, or markdown outside the JSON.  Use exactly this structure:\n\n{\n    \"summary\": \"<2-3 sentence overview>\",\n    \"key_points\": [\n        \"<point 1>\",\n        \"<point 2>\",\n        \"<point 3>\",\n        \"<point 4>\",\n        \"<point 5>\"\n    ],\n    \"challenges\": [\n        \"<challenge 1>\",\n        \"<challenge 2>\",\n        \"<challenge 3>\"\n    ],\n    \"potential_impact\": \"<1-2 sentences about future impact>\",\n    \"confidence_level\": \"<high OR medium OR low>\",\n    \"estimated_timeline\": \"<short-term OR medium-term OR long-term>\"\n}",
+      "repetitions": [
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 1
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 2
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 3
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 4
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 5
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 6
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 7
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 8
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 9
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 10
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 11
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 12
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 13
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 14
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 15
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 16
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 17
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 18
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 19
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 20
+        }
+      ]
+    },
+    "P04": {
+      "angle": "Patient data privacy",
+      "prompt": "Evaluate the privacy and security challenges that arise from using AI systems to process sensitive patient health data.\n\nYou must respond ONLY with a valid JSON object. Do not include any text,\nexplanation, or markdown outside the JSON.  Use exactly this structure:\n\n{\n    \"summary\": \"<2-3 sentence overview>\",\n    \"key_points\": [\n        \"<point 1>\",\n        \"<point 2>\",\n        \"<point 3>\",\n        \"<point 4>\",\n        \"<point 5>\"\n    ],\n    \"challenges\": [\n        \"<challenge 1>\",\n        \"<challenge 2>\",\n        \"<challenge 3>\"\n    ],\n    \"potential_impact\": \"<1-2 sentences about future impact>\",\n    \"confidence_level\": \"<high OR medium OR low>\",\n    \"estimated_timeline\": \"<short-term OR medium-term OR long-term>\"\n}",
+      "repetitions": [
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 1
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 2
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 3
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 4
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 5
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 6
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 7
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 8
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 9
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 10
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 11
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 12
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 13
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 14
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 15
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 16
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 17
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 18
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 19
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 20
+        }
+      ]
+    },
+    "P05": {
+      "angle": "Rural healthcare access",
+      "prompt": "Describe how AI technologies can improve healthcare accessibility in rural and underserved communities.\n\nYou must respond ONLY with a valid JSON object. Do not include any text,\nexplanation, or markdown outside the JSON.  Use exactly this structure:\n\n{\n    \"summary\": \"<2-3 sentence overview>\",\n    \"key_points\": [\n        \"<point 1>\",\n        \"<point 2>\",\n        \"<point 3>\",\n        \"<point 4>\",\n        \"<point 5>\"\n    ],\n    \"challenges\": [\n        \"<challenge 1>\",\n        \"<challenge 2>\",\n        \"<challenge 3>\"\n    ],\n    \"potential_impact\": \"<1-2 sentences about future impact>\",\n    \"confidence_level\": \"<high OR medium OR low>\",\n    \"estimated_timeline\": \"<short-term OR medium-term OR long-term>\"\n}",
+      "repetitions": [
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 1
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 2
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 3
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 4
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 5
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 6
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 7
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 8
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 9
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 10
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 11
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 12
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 13
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 14
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 15
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 16
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 17
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 18
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 19
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 20
+        }
+      ]
+    },
+    "P06": {
+      "angle": "Mental health",
+      "prompt": "Assess the potential of AI-driven tools for mental health screening, therapy assistance, and psychological well-being monitoring.\n\nYou must respond ONLY with a valid JSON object. Do not include any text,\nexplanation, or markdown outside the JSON.  Use exactly this structure:\n\n{\n    \"summary\": \"<2-3 sentence overview>\",\n    \"key_points\": [\n        \"<point 1>\",\n        \"<point 2>\",\n        \"<point 3>\",\n        \"<point 4>\",\n        \"<point 5>\"\n    ],\n    \"challenges\": [\n        \"<challenge 1>\",\n        \"<challenge 2>\",\n        \"<challenge 3>\"\n    ],\n    \"potential_impact\": \"<1-2 sentences about future impact>\",\n    \"confidence_level\": \"<high OR medium OR low>\",\n    \"estimated_timeline\": \"<short-term OR medium-term OR long-term>\"\n}",
+      "repetitions": [
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 1
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 2
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 3
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 4
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 5
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 6
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 7
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 8
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 9
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 10
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 11
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 12
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 13
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 14
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 15
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 16
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 17
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 18
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 19
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 20
+        }
+      ]
+    },
+    "P07": {
+      "angle": "Cost reduction",
+      "prompt": "Analyze how artificial intelligence can reduce operational costs in healthcare systems while maintaining or improving quality of care.\n\nYou must respond ONLY with a valid JSON object. Do not include any text,\nexplanation, or markdown outside the JSON.  Use exactly this structure:\n\n{\n    \"summary\": \"<2-3 sentence overview>\",\n    \"key_points\": [\n        \"<point 1>\",\n        \"<point 2>\",\n        \"<point 3>\",\n        \"<point 4>\",\n        \"<point 5>\"\n    ],\n    \"challenges\": [\n        \"<challenge 1>\",\n        \"<challenge 2>\",\n        \"<challenge 3>\"\n    ],\n    \"potential_impact\": \"<1-2 sentences about future impact>\",\n    \"confidence_level\": \"<high OR medium OR low>\",\n    \"estimated_timeline\": \"<short-term OR medium-term OR long-term>\"\n}",
+      "repetitions": [
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 1
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 2
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 3
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 4
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 5
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 6
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 7
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 8
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 9
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 10
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 11
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 12
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 13
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 14
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 15
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 16
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 17
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 18
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 19
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 20
+        }
+      ]
+    },
+    "P08": {
+      "angle": "Robotic surgery",
+      "prompt": "Evaluate the current capabilities and future potential of AI-assisted robotic surgery systems in modern operating rooms.\n\nYou must respond ONLY with a valid JSON object. Do not include any text,\nexplanation, or markdown outside the JSON.  Use exactly this structure:\n\n{\n    \"summary\": \"<2-3 sentence overview>\",\n    \"key_points\": [\n        \"<point 1>\",\n        \"<point 2>\",\n        \"<point 3>\",\n        \"<point 4>\",\n        \"<point 5>\"\n    ],\n    \"challenges\": [\n        \"<challenge 1>\",\n        \"<challenge 2>\",\n        \"<challenge 3>\"\n    ],\n    \"potential_impact\": \"<1-2 sentences about future impact>\",\n    \"confidence_level\": \"<high OR medium OR low>\",\n    \"estimated_timeline\": \"<short-term OR medium-term OR long-term>\"\n}",
+      "repetitions": [
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 1
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 2
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 3
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 4
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 5
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 6
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 7
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 8
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 9
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 10
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 11
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 12
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 13
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 14
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 15
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 16
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 17
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 18
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 19
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 20
+        }
+      ]
+    },
+    "P09": {
+      "angle": "Personalized medicine",
+      "prompt": "Discuss how AI enables personalized medicine by tailoring treatments to individual patient genetic profiles and health histories.\n\nYou must respond ONLY with a valid JSON object. Do not include any text,\nexplanation, or markdown outside the JSON.  Use exactly this structure:\n\n{\n    \"summary\": \"<2-3 sentence overview>\",\n    \"key_points\": [\n        \"<point 1>\",\n        \"<point 2>\",\n        \"<point 3>\",\n        \"<point 4>\",\n        \"<point 5>\"\n    ],\n    \"challenges\": [\n        \"<challenge 1>\",\n        \"<challenge 2>\",\n        \"<challenge 3>\"\n    ],\n    \"potential_impact\": \"<1-2 sentences about future impact>\",\n    \"confidence_level\": \"<high OR medium OR low>\",\n    \"estimated_timeline\": \"<short-term OR medium-term OR long-term>\"\n}",
+      "repetitions": [
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 1
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 2
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 3
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 4
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 5
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 6
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 7
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 8
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 9
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 10
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 11
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 12
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 13
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 14
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 15
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 16
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 17
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 18
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 19
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.002,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 20
+        }
+      ]
+    },
+    "P10": {
+      "angle": "Electronic health records",
+      "prompt": "Explain how AI can improve the management and analysis of electronic health records to enhance clinical decision-making.\n\nYou must respond ONLY with a valid JSON object. Do not include any text,\nexplanation, or markdown outside the JSON.  Use exactly this structure:\n\n{\n    \"summary\": \"<2-3 sentence overview>\",\n    \"key_points\": [\n        \"<point 1>\",\n        \"<point 2>\",\n        \"<point 3>\",\n        \"<point 4>\",\n        \"<point 5>\"\n    ],\n    \"challenges\": [\n        \"<challenge 1>\",\n        \"<challenge 2>\",\n        \"<challenge 3>\"\n    ],\n    \"potential_impact\": \"<1-2 sentences about future impact>\",\n    \"confidence_level\": \"<high OR medium OR low>\",\n    \"estimated_timeline\": \"<short-term OR medium-term OR long-term>\"\n}",
+      "repetitions": [
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.002,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 1
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.002,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 2
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 3
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 4
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 5
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 6
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 7
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 8
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 9
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 10
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 11
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 12
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 13
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 14
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 15
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 16
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 17
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 18
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 19
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 20
+        }
+      ]
+    },
+    "P11": {
+      "angle": "Clinical trials",
+      "prompt": "Analyze the impact of AI on clinical trial design, patient recruitment, and outcome prediction in pharmaceutical research.\n\nYou must respond ONLY with a valid JSON object. Do not include any text,\nexplanation, or markdown outside the JSON.  Use exactly this structure:\n\n{\n    \"summary\": \"<2-3 sentence overview>\",\n    \"key_points\": [\n        \"<point 1>\",\n        \"<point 2>\",\n        \"<point 3>\",\n        \"<point 4>\",\n        \"<point 5>\"\n    ],\n    \"challenges\": [\n        \"<challenge 1>\",\n        \"<challenge 2>\",\n        \"<challenge 3>\"\n    ],\n    \"potential_impact\": \"<1-2 sentences about future impact>\",\n    \"confidence_level\": \"<high OR medium OR low>\",\n    \"estimated_timeline\": \"<short-term OR medium-term OR long-term>\"\n}",
+      "repetitions": [
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 1
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 2
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 3
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 4
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 5
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 6
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 7
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 8
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 9
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 10
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 11
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 12
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 13
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 14
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 15
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 16
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 17
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 18
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 19
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 20
+        }
+      ]
+    },
+    "P12": {
+      "angle": "Ethics",
+      "prompt": "Discuss the key ethical dilemmas surrounding the deployment of AI systems in healthcare decision-making and patient care.\n\nYou must respond ONLY with a valid JSON object. Do not include any text,\nexplanation, or markdown outside the JSON.  Use exactly this structure:\n\n{\n    \"summary\": \"<2-3 sentence overview>\",\n    \"key_points\": [\n        \"<point 1>\",\n        \"<point 2>\",\n        \"<point 3>\",\n        \"<point 4>\",\n        \"<point 5>\"\n    ],\n    \"challenges\": [\n        \"<challenge 1>\",\n        \"<challenge 2>\",\n        \"<challenge 3>\"\n    ],\n    \"potential_impact\": \"<1-2 sentences about future impact>\",\n    \"confidence_level\": \"<high OR medium OR low>\",\n    \"estimated_timeline\": \"<short-term OR medium-term OR long-term>\"\n}",
+      "repetitions": [
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 1
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 2
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 3
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 4
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 5
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 6
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 7
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 8
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 9
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 10
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 11
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 12
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 13
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 14
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 15
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 16
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 17
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 18
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 19
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 20
+        }
+      ]
+    },
+    "P13": {
+      "angle": "Medical imaging",
+      "prompt": "Evaluate how deep learning models are advancing medical image analysis in radiology, pathology, and dermatology.\n\nYou must respond ONLY with a valid JSON object. Do not include any text,\nexplanation, or markdown outside the JSON.  Use exactly this structure:\n\n{\n    \"summary\": \"<2-3 sentence overview>\",\n    \"key_points\": [\n        \"<point 1>\",\n        \"<point 2>\",\n        \"<point 3>\",\n        \"<point 4>\",\n        \"<point 5>\"\n    ],\n    \"challenges\": [\n        \"<challenge 1>\",\n        \"<challenge 2>\",\n        \"<challenge 3>\"\n    ],\n    \"potential_impact\": \"<1-2 sentences about future impact>\",\n    \"confidence_level\": \"<high OR medium OR low>\",\n    \"estimated_timeline\": \"<short-term OR medium-term OR long-term>\"\n}",
+      "repetitions": [
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 1
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 2
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 3
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 4
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 5
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 6
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 7
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 8
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 9
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 10
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 11
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 12
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 13
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 14
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 15
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 16
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 17
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 18
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 19
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 20
+        }
+      ]
+    },
+    "P14": {
+      "angle": "Elderly care",
+      "prompt": "Describe the applications of AI in elderly care, including fall detection, medication management, and cognitive health monitoring.\n\nYou must respond ONLY with a valid JSON object. Do not include any text,\nexplanation, or markdown outside the JSON.  Use exactly this structure:\n\n{\n    \"summary\": \"<2-3 sentence overview>\",\n    \"key_points\": [\n        \"<point 1>\",\n        \"<point 2>\",\n        \"<point 3>\",\n        \"<point 4>\",\n        \"<point 5>\"\n    ],\n    \"challenges\": [\n        \"<challenge 1>\",\n        \"<challenge 2>\",\n        \"<challenge 3>\"\n    ],\n    \"potential_impact\": \"<1-2 sentences about future impact>\",\n    \"confidence_level\": \"<high OR medium OR low>\",\n    \"estimated_timeline\": \"<short-term OR medium-term OR long-term>\"\n}",
+      "repetitions": [
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 1
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 2
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 3
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 4
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 5
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 6
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 7
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 8
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 9
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 10
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 11
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 12
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 13
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 14
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 15
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 16
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 17
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 18
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 19
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 20
+        }
+      ]
+    },
+    "P15": {
+      "angle": "Pandemic response",
+      "prompt": "Assess how AI systems contributed to pandemic preparedness, epidemiological modeling, and vaccine development during recent global health crises.\n\nYou must respond ONLY with a valid JSON object. Do not include any text,\nexplanation, or markdown outside the JSON.  Use exactly this structure:\n\n{\n    \"summary\": \"<2-3 sentence overview>\",\n    \"key_points\": [\n        \"<point 1>\",\n        \"<point 2>\",\n        \"<point 3>\",\n        \"<point 4>\",\n        \"<point 5>\"\n    ],\n    \"challenges\": [\n        \"<challenge 1>\",\n        \"<challenge 2>\",\n        \"<challenge 3>\"\n    ],\n    \"potential_impact\": \"<1-2 sentences about future impact>\",\n    \"confidence_level\": \"<high OR medium OR low>\",\n    \"estimated_timeline\": \"<short-term OR medium-term OR long-term>\"\n}",
+      "repetitions": [
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 1
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 2
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 3
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 4
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 5
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 6
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 7
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 8
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 9
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 10
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 11
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 12
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 13
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 14
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 15
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 16
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 17
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 18
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 19
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 20
+        }
+      ]
+    },
+    "P16": {
+      "angle": "Medical education",
+      "prompt": "Discuss how AI-powered simulations and virtual patients are transforming medical education and surgical training programs.\n\nYou must respond ONLY with a valid JSON object. Do not include any text,\nexplanation, or markdown outside the JSON.  Use exactly this structure:\n\n{\n    \"summary\": \"<2-3 sentence overview>\",\n    \"key_points\": [\n        \"<point 1>\",\n        \"<point 2>\",\n        \"<point 3>\",\n        \"<point 4>\",\n        \"<point 5>\"\n    ],\n    \"challenges\": [\n        \"<challenge 1>\",\n        \"<challenge 2>\",\n        \"<challenge 3>\"\n    ],\n    \"potential_impact\": \"<1-2 sentences about future impact>\",\n    \"confidence_level\": \"<high OR medium OR low>\",\n    \"estimated_timeline\": \"<short-term OR medium-term OR long-term>\"\n}",
+      "repetitions": [
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 1
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 2
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 3
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 4
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 5
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 6
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 7
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 8
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 9
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 10
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 11
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 12
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 13
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 14
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 15
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 16
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 17
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 18
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 19
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 20
+        }
+      ]
+    },
+    "P17": {
+      "angle": "Billing and insurance",
+      "prompt": "Analyze the potential of AI to streamline healthcare billing, insurance claims processing, and fraud detection.\n\nYou must respond ONLY with a valid JSON object. Do not include any text,\nexplanation, or markdown outside the JSON.  Use exactly this structure:\n\n{\n    \"summary\": \"<2-3 sentence overview>\",\n    \"key_points\": [\n        \"<point 1>\",\n        \"<point 2>\",\n        \"<point 3>\",\n        \"<point 4>\",\n        \"<point 5>\"\n    ],\n    \"challenges\": [\n        \"<challenge 1>\",\n        \"<challenge 2>\",\n        \"<challenge 3>\"\n    ],\n    \"potential_impact\": \"<1-2 sentences about future impact>\",\n    \"confidence_level\": \"<high OR medium OR low>\",\n    \"estimated_timeline\": \"<short-term OR medium-term OR long-term>\"\n}",
+      "repetitions": [
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 1
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 2
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 3
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 4
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 5
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 6
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 7
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 8
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 9
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 10
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 11
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 12
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 13
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 14
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 15
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 16
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 17
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 18
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 19
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 20
+        }
+      ]
+    },
+    "P18": {
+      "angle": "Rare diseases",
+      "prompt": "Evaluate how AI algorithms can improve the detection and diagnosis of rare diseases that are often missed by traditional diagnostic methods.\n\nYou must respond ONLY with a valid JSON object. Do not include any text,\nexplanation, or markdown outside the JSON.  Use exactly this structure:\n\n{\n    \"summary\": \"<2-3 sentence overview>\",\n    \"key_points\": [\n        \"<point 1>\",\n        \"<point 2>\",\n        \"<point 3>\",\n        \"<point 4>\",\n        \"<point 5>\"\n    ],\n    \"challenges\": [\n        \"<challenge 1>\",\n        \"<challenge 2>\",\n        \"<challenge 3>\"\n    ],\n    \"potential_impact\": \"<1-2 sentences about future impact>\",\n    \"confidence_level\": \"<high OR medium OR low>\",\n    \"estimated_timeline\": \"<short-term OR medium-term OR long-term>\"\n}",
+      "repetitions": [
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 1
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 2
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 3
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 4
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 5
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 6
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 7
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 8
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 9
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 10
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 11
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 12
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 13
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 14
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 15
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 16
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 17
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 18
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 19
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 20
+        }
+      ]
+    },
+    "P19": {
+      "angle": "Preventive care",
+      "prompt": "Discuss how AI can enhance preventive healthcare through early risk prediction, lifestyle recommendations, and continuous health monitoring.\n\nYou must respond ONLY with a valid JSON object. Do not include any text,\nexplanation, or markdown outside the JSON.  Use exactly this structure:\n\n{\n    \"summary\": \"<2-3 sentence overview>\",\n    \"key_points\": [\n        \"<point 1>\",\n        \"<point 2>\",\n        \"<point 3>\",\n        \"<point 4>\",\n        \"<point 5>\"\n    ],\n    \"challenges\": [\n        \"<challenge 1>\",\n        \"<challenge 2>\",\n        \"<challenge 3>\"\n    ],\n    \"potential_impact\": \"<1-2 sentences about future impact>\",\n    \"confidence_level\": \"<high OR medium OR low>\",\n    \"estimated_timeline\": \"<short-term OR medium-term OR long-term>\"\n}",
+      "repetitions": [
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 1
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 2
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 3
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 4
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 5
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 6
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 7
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 8
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 9
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 10
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 11
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 12
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 13
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 14
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 15
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 16
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 17
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 18
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 19
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 20
+        }
+      ]
+    },
+    "P20": {
+      "angle": "Regulatory challenges",
+      "prompt": "Analyze the regulatory challenges and frameworks needed to ensure safe and effective deployment of AI systems in clinical practice worldwide.\n\nYou must respond ONLY with a valid JSON object. Do not include any text,\nexplanation, or markdown outside the JSON.  Use exactly this structure:\n\n{\n    \"summary\": \"<2-3 sentence overview>\",\n    \"key_points\": [\n        \"<point 1>\",\n        \"<point 2>\",\n        \"<point 3>\",\n        \"<point 4>\",\n        \"<point 5>\"\n    ],\n    \"challenges\": [\n        \"<challenge 1>\",\n        \"<challenge 2>\",\n        \"<challenge 3>\"\n    ],\n    \"potential_impact\": \"<1-2 sentences about future impact>\",\n    \"confidence_level\": \"<high OR medium OR low>\",\n    \"estimated_timeline\": \"<short-term OR medium-term OR long-term>\"\n}",
+      "repetitions": [
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 1
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 2
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 3
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 4
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 5
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 6
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 7
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 8
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 9
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 10
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 11
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 12
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 13
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 14
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 15
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 16
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 17
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 18
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 19
+        },
+        {
+          "response": "",
+          "num_tokens_generated": 0,
+          "wall_time_s": 0.001,
+          "error": "'DynamicCache' object has no attribute 'seen_tokens'",
+          "repetition": 20
+        }
+      ]
+    }
+  }
+}
