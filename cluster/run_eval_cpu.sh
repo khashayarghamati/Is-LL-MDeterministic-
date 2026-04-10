@@ -22,7 +22,7 @@ scancel --name=stoch-eval --user="$USER" 2>/dev/null || true
 # Submit CPU-only eval+analysis job using the existing run_evaluate.sh script
 JOB_ID=$(sbatch \
     --job-name="stoch-eval-cpu" \
-    --partition="cs" \
+    --partition="gpu" \
     --account="cs" \
     --cpus-per-task=8 \
     --mem="16G" \
