@@ -1,0 +1,86 @@
+======================================================================
+  LLM STOCHASTICITY EXPLORATION — ANALYSIS REPORT
+======================================================================
+
+MODELS TESTED
+----------------------------------------
+  Qwen/Qwen2.5-0.5B-Instruct    0.5B  Stochasticity: 0.3414
+  meta-llama/Llama-3.2-1B-Instruct    1.0B  Stochasticity: 0.3089
+  Qwen/Qwen2.5-1.5B-Instruct    1.5B  Stochasticity: 0.3170
+  google/gemma-2-2b-it         2.0B  Stochasticity: 0.2688
+  meta-llama/Llama-3.2-3B-Instruct    3.0B  Stochasticity: 0.2713
+  Qwen/Qwen2.5-3B-Instruct     3.0B  Stochasticity: 0.3115
+  microsoft/Phi-3.5-mini-instruct    3.8B  Stochasticity: nan
+  Qwen/Qwen2.5-7B-Instruct     7.0B  Stochasticity: 0.2700
+  meta-llama/Llama-3.1-8B-Instruct    8.0B  Stochasticity: 0.2447
+  google/gemma-2-9b-it         9.0B  Stochasticity: 0.2045
+  Qwen/Qwen2.5-14B-Instruct   14.0B  Stochasticity: 0.2780
+  meta-llama/Llama-3.1-70B-Instruct   70.0B  Stochasticity: 0.2198
+  Qwen/Qwen2.5-72B-Instruct   72.0B  Stochasticity: 0.2328
+
+STOCHASTICITY RANKING (most → least)
+----------------------------------------
+  1. Qwen/Qwen2.5-0.5B-Instruct  Score: 0.3414
+  2. Qwen/Qwen2.5-1.5B-Instruct  Score: 0.3170
+  3. Qwen/Qwen2.5-3B-Instruct   Score: 0.3115
+  4. meta-llama/Llama-3.2-1B-Instruct  Score: 0.3089
+  5. Qwen/Qwen2.5-14B-Instruct  Score: 0.2780
+  6. meta-llama/Llama-3.2-3B-Instruct  Score: 0.2713
+  7. Qwen/Qwen2.5-7B-Instruct   Score: 0.2700
+  8. google/gemma-2-2b-it       Score: 0.2688
+  9. meta-llama/Llama-3.1-8B-Instruct  Score: 0.2447
+  10. Qwen/Qwen2.5-72B-Instruct  Score: 0.2328
+  11. meta-llama/Llama-3.1-70B-Instruct  Score: 0.2198
+  12. google/gemma-2-9b-it       Score: 0.2045
+  13. microsoft/Phi-3.5-mini-instruct  Score: nan
+
+CORRELATION: PARAMETER SIZE vs. STOCHASTICITY
+----------------------------------------
+  Spearman ρ = -0.7671  (p = 0.0036)
+  Pearson  r = -0.5866  (p = 0.0450)
+
+  *** Statistically significant: Stochasticity DECREASES with parameter count (p < 0.05) ***
+
+KRUSKAL-WALLIS TEST (small vs medium vs large models)
+----------------------------------------
+  H-statistic = 137.7795  (p = 0.0000)
+  *** Significant difference across model size groups ***
+
+PER-METRIC CORRELATION WITH PARAMETER SIZE
+----------------------------------------
+  * Self-BLEU                  ρ=+0.771  p=0.0034
+  * ROUGE-L                    ρ=+0.676  p=0.0158
+  * Jaccard Sim.               ρ=+0.708  p=0.0101
+    TF-IDF Cosine              ρ=+0.522  p=0.0818
+  * Unique N-gram %            ρ=-0.701  p=0.0112
+  * Embed. Cosine              ρ=+0.644  p=0.0237
+  * Semantic Entropy           ρ=-0.618  p=0.0324
+  * Vendi Score                ρ=-0.644  p=0.0237
+  * Template Adherence         ρ=+0.650  p=0.0221
+  * Length CV                  ρ=-0.781  p=0.0027
+  * Key-Point Consist.         ρ=+0.658  p=0.0199
+    Confidence Consist.        ρ=+0.032  p=0.9225
+  * Timeline Consist.          ρ=+0.806  p=0.0016
+  * STOCHASTICITY INDEX        ρ=-0.767  p=0.0036
+
+DETAILED METRIC AVERAGES
+----------------------------------------
+  Self-BLEU                  mean=0.6397  std=0.0962  range=[0.4928, 0.8047]
+  ROUGE-L                    mean=0.4292  std=0.0587  range=[0.3543, 0.5386]
+  Jaccard Sim.               mean=0.3901  std=0.0457  range=[0.3208, 0.4776]
+  TF-IDF Cosine              mean=0.5415  std=0.0908  range=[0.3890, 0.6757]
+  Unique N-gram %            mean=0.5680  std=0.0987  range=[0.3958, 0.7089]
+  Embed. Cosine              mean=0.9164  std=0.0134  range=[0.8922, 0.9405]
+  Semantic Entropy           mean=0.0152  std=0.0160  range=[0.0000, 0.0499]
+  Vendi Score                mean=0.0321  std=0.0056  range=[0.0223, 0.0425]
+  Template Adherence         mean=0.9250  std=0.1635  range=[0.4825, 1.0000]
+  Length CV                  mean=0.1351  std=0.0553  range=[0.0855, 0.2443]
+  Key-Point Consist.         mean=0.2824  std=0.0503  range=[0.2056, 0.3597]
+  Confidence Consist.        mean=0.9148  std=0.0795  range=[0.7050, 0.9825]
+  Timeline Consist.          mean=0.8378  std=0.1297  range=[0.6133, 1.0000]
+  STOCHASTICITY INDEX        mean=0.2724  std=0.0420  range=[0.2045, 0.3414]
+
+======================================================================
+Plots saved in: /beegfs/general/kg23aay/stochastic_exploration/results/plots
+Data  saved in: /beegfs/general/kg23aay/stochastic_exploration/results/metrics
+======================================================================

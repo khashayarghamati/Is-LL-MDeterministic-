@@ -1,0 +1,72 @@
+{
+  "spearman": {
+    "correlation": -0.7670764828304892,
+    "p_value": 0.003596176445383981
+  },
+  "pearson": {
+    "correlation": -0.5866474673223707,
+    "p_value": 0.04495670856595731
+  },
+  "per_metric_correlation": {
+    "self_bleu": {
+      "spearman_r": 0.7705791151721809,
+      "p_value": 0.0033551786239375417
+    },
+    "rouge_l": {
+      "spearman_r": 0.6760080419465042,
+      "p_value": 0.015806688244151858
+    },
+    "jaccard": {
+      "spearman_r": 0.7075317330217298,
+      "p_value": 0.01005435545518543
+    },
+    "tfidf_cosine": {
+      "spearman_r": 0.5218922189120679,
+      "p_value": 0.08178822638152844
+    },
+    "unique_ngram_ratio": {
+      "spearman_r": -0.7005264683383464,
+      "p_value": 0.0111699289259676
+    },
+    "embedding_cosine": {
+      "spearman_r": 0.6444843508712786,
+      "p_value": 0.02367734758034818
+    },
+    "semantic_entropy": {
+      "spearman_r": -0.6175438596491228,
+      "p_value": 0.032384858642972594
+    },
+    "vendi_score": {
+      "spearman_r": -0.6444843508712786,
+      "p_value": 0.02367734758034818
+    },
+    "template_adherence": {
+      "spearman_r": 0.6501143953804284,
+      "p_value": 0.02209845077529498
+    },
+    "response_length_cv": {
+      "spearman_r": -0.7810870121972561,
+      "p_value": 0.0027052956461396886
+    },
+    "key_point_consistency": {
+      "spearman_r": 0.6584948802380455,
+      "p_value": 0.019892133524913678
+    },
+    "confidence_consistency": {
+      "spearman_r": 0.03152369107522559,
+      "p_value": 0.9225248645215405
+    },
+    "timeline_consistency": {
+      "spearman_r": 0.8056054385890983,
+      "p_value": 0.0015614291109292855
+    },
+    "stochasticity_index": {
+      "spearman_r": -0.7670764828304892,
+      "p_value": 0.003596176445383981
+    }
+  },
+  "kruskal_wallis": {
+    "H_statistic": 137.77949343015212,
+    "p_value": 1.1381879236996877e-29
+  }
+}
