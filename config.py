@@ -37,7 +37,9 @@ class ModelSpec:
 # Tier 3  "Large"    : 9–32 B  — instruction following, reasoning emerge
 # Tier 4  "Frontier" : 70 B+   — full emergent capabilities
 # ---------------------------------------------------------------------------
-DEFAULT_MODELS = [
+
+# ---- Original models (already have healthcare T=0.7 data for most) ----
+ORIGINAL_MODELS = [
     # ---- Tier 1: Small (<3B) — 1 GPU, fp16 ----
     ModelSpec("Qwen/Qwen2.5-0.5B-Instruct",       0.5,  "qwen2.5", 1),
     ModelSpec("meta-llama/Llama-3.2-1B-Instruct",  1.0,  "llama3",  1),
@@ -59,6 +61,43 @@ DEFAULT_MODELS = [
 
     # ---- Tier 4: Frontier (70B+) — 4 GPUs, fp16 / 4-bit ----
     ModelSpec("meta-llama/Llama-3.1-70B-Instruct", 70.0, "llama3",  4),
+    ModelSpec("Qwen/Qwen2.5-72B-Instruct",        72.0, "qwen2.5", 4),
+]
+
+# ---- New-generation models (extend coverage + newer architectures) ----
+NEW_MODELS = [
+    # Gemma 3 family
+    ModelSpec("google/gemma-3-1b-it",              1.0,  "gemma3",  1),
+    ModelSpec("google/gemma-3-4b-it",              4.0,  "gemma3",  2),
+    ModelSpec("google/gemma-3-12b-it",            12.0,  "gemma3",  3),
+    ModelSpec("google/gemma-3-27b-it",            27.0,  "gemma3",  3),
+
+    # Qwen 3 family
+    ModelSpec("Qwen/Qwen3-0.6B",                  0.6,  "qwen3",   1),
+    ModelSpec("Qwen/Qwen3-1.7B",                  1.7,  "qwen3",   1),
+    ModelSpec("Qwen/Qwen3-4B",                    4.0,  "qwen3",   2),
+    ModelSpec("Qwen/Qwen3-8B",                    8.0,  "qwen3",   2),
+    ModelSpec("Qwen/Qwen3-14B",                  14.0,  "qwen3",   3),
+    ModelSpec("Qwen/Qwen3-32B",                  32.0,  "qwen3",   3),
+
+    # Phi-4
+    ModelSpec("microsoft/phi-4",                  14.0,  "phi4",    3),
+
+    # Llama 4 (MoE — 17B active params, total params much larger)
+    ModelSpec("meta-llama/Llama-4-Scout-17B-16E-Instruct",
+                                                  17.0,  "llama4",  3),
+]
+
+# Combined: all models for the full extended experiment
+DEFAULT_MODELS = ORIGINAL_MODELS + NEW_MODELS
+
+# Subset of representative models for temperature sweep (saves compute)
+TEMPERATURE_SWEEP_MODELS = [
+    ModelSpec("Qwen/Qwen2.5-0.5B-Instruct",       0.5,  "qwen2.5", 1),
+    ModelSpec("google/gemma-3-1b-it",              1.0,  "gemma3",  1),
+    ModelSpec("Qwen/Qwen2.5-3B-Instruct",         3.0,  "qwen2.5", 2),
+    ModelSpec("Qwen/Qwen3-8B",                    8.0,  "qwen3",   2),
+    ModelSpec("google/gemma-3-12b-it",            12.0,  "gemma3",  3),
     ModelSpec("Qwen/Qwen2.5-72B-Instruct",        72.0, "qwen2.5", 4),
 ]
 
@@ -88,6 +127,13 @@ class ExperimentConfig:
     top_p: float = 0.9
     max_tokens: int = 1024
     seed: Optional[int] = None         # None → non-deterministic
+    topic: str = "healthcare"          # Prompt topic ("healthcare", "climate", "software")
+
+    # --- Experiment naming (organises results into subdirectories) ---
+    # When set, results go to results/{experiment_name}/ instead of results/
+    # Format convention: "{topic}_T{temperature}" e.g. "climate_T0.3"
+    # Empty string → flat layout (backward compat with original experiment)
+    experiment_name: str = ""
 
     # --- HuggingFace settings ---
     torch_dtype: str = "float16"       # "float16", "bfloat16", "float32"
@@ -101,10 +147,20 @@ class ExperimentConfig:
 
     # --- Paths (beegfs on UH cluster) ---
     beegfs_base: str = "/beegfs/general/kg23aay/stochastic_exploration"
-    results_dir: str = "/beegfs/general/kg23aay/stochastic_exploration/results"
-    raw_responses_dir: str = "/beegfs/general/kg23aay/stochastic_exploration/results/raw_responses"
-    metrics_dir: str = "/beegfs/general/kg23aay/stochastic_exploration/results/metrics"
-    plots_dir: str = "/beegfs/general/kg23aay/stochastic_exploration/results/plots"
+    results_dir: str = ""    # Computed in __post_init__
+    raw_responses_dir: str = ""
+    metrics_dir: str = ""
+    plots_dir: str = ""
+
+    def __post_init__(self):
+        """Set results paths based on experiment_name."""
+        base = f"{self.beegfs_base}/results"
+        if self.experiment_name:
+            base = f"{base}/{self.experiment_name}"
+        self.results_dir = base
+        self.raw_responses_dir = f"{base}/raw_responses"
+        self.metrics_dir = f"{base}/metrics"
+        self.plots_dir = f"{base}/plots"
 
     # --- Timeouts ---
     generation_timeout: int = 300      # seconds per single generation

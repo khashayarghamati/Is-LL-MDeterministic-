@@ -9,21 +9,24 @@ and whether emergent properties change stochasticity patterns.
 Backend: HuggingFace Transformers (GPU).  Designed for SLURM clusters.
 
 Usage:
-    python main.py run                    # Run all tiers
+    python main.py run                    # Run all tiers (healthcare, T=0.7)
     python main.py run   --tier 1         # Run only small models (<3B)
-    python main.py run   --tier 2         # Run medium models  (3-8B)
-    python main.py run   --tier 3         # Run large models   (9-32B)
-    python main.py run   --tier 4         # Run frontier models (70B+)
+    python main.py run   --topic climate  # Run with climate change prompts
+    python main.py run   --temp 0.3 --experiment healthcare_T0.3
     python main.py evaluate               # Compute stochasticity metrics
+    python main.py evaluate --experiment climate_T0.7
     python main.py analyze                # Statistical analysis + plots
     python main.py all   --tier 1         # Run → Evaluate → Analyze for tier 1
     python main.py status                 # Check experiment progress
 
 Options:
-    --tier  N         Only run models in tier N  (1/2/3/4)
-    --reps  N         Override repetitions per prompt  (default: 20)
-    --temp  FLOAT     Sampling temperature             (default: 0.7)
-    --models m1,m2    Comma-separated HuggingFace model IDs (overrides defaults)
+    --tier  N            Only run models in tier N  (1/2/3/4)
+    --reps  N            Override repetitions per prompt  (default: 20)
+    --temp  FLOAT        Sampling temperature             (default: 0.7)
+    --topic  TOPIC       Prompt topic: healthcare, climate, software  (default: healthcare)
+    --experiment NAME    Experiment name — organises results into subdirectory
+    --model-set SET      Model set: original, new, all, tempsweep  (default: all)
+    --models m1,m2       Comma-separated HuggingFace model IDs (overrides defaults)
 """
 
 import argparse
@@ -35,7 +38,8 @@ from pathlib import Path
 from dotenv import load_dotenv
 load_dotenv()  # Load .env (HF_TOKEN, etc.) into os.environ
 
-from config import ExperimentConfig, ModelSpec, DEFAULT_MODELS
+from config import (ExperimentConfig, ModelSpec, DEFAULT_MODELS,
+                    ORIGINAL_MODELS, NEW_MODELS, TEMPERATURE_SWEEP_MODELS)
 
 logging.basicConfig(
     level=logging.INFO,
@@ -45,14 +49,33 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
+MODEL_SETS = {
+    "original": ORIGINAL_MODELS,
+    "new":      NEW_MODELS,
+    "all":      DEFAULT_MODELS,
+    "tempsweep": TEMPERATURE_SWEEP_MODELS,
+}
+
+
 def build_config(args) -> ExperimentConfig:
     """Build ExperimentConfig from CLI arguments."""
-    cfg = ExperimentConfig()
+    # Pick model set
+    model_set_name = getattr(args, "model_set", None) or "all"
+    base_models = list(MODEL_SETS.get(model_set_name, DEFAULT_MODELS))
 
+    # Collect all overrides before construction so __post_init__ sees them
+    kwargs = {"models": base_models}
     if args.reps:
-        cfg.num_repetitions = args.reps
+        kwargs["num_repetitions"] = args.reps
     if args.temp is not None:
-        cfg.temperature = args.temp
+        kwargs["temperature"] = args.temp
+    if hasattr(args, "topic") and args.topic:
+        kwargs["topic"] = args.topic
+    if hasattr(args, "experiment") and args.experiment:
+        kwargs["experiment_name"] = args.experiment
+
+    cfg = ExperimentConfig(**kwargs)
+
     if args.models:
         model_ids = [m.strip() for m in args.models.split(",")]
         default_map = {m.name: m for m in DEFAULT_MODELS}
@@ -84,18 +107,23 @@ def _guess_params(model_id: str) -> float:
 def cmd_run(cfg: ExperimentConfig, tier: int | None):
     """Run the experiment: send all prompts to all models."""
     from runner import HuggingFaceRunner
+    from prompts import get_all_prompts
 
     models = cfg.get_models_for_tier(tier) if tier else cfg.models
+    n_prompts = len(get_all_prompts(cfg.topic))
 
     logger.info("=" * 60)
     logger.info("STARTING EXPERIMENT")
+    logger.info("  Experiment:  %s", cfg.experiment_name or "(default)")
+    logger.info("  Topic:       %s", cfg.topic)
     logger.info("  Tier:        %s", tier or "ALL")
     logger.info("  Models:      %d", len(models))
-    logger.info("  Prompts:     20")
+    logger.info("  Prompts:     %d", n_prompts)
     logger.info("  Repetitions: %d per prompt per model", cfg.num_repetitions)
-    logger.info("  Total calls: %d", len(models) * 20 * cfg.num_repetitions)
+    logger.info("  Total calls: %d", len(models) * n_prompts * cfg.num_repetitions)
     logger.info("  Temperature: %.2f", cfg.temperature)
     logger.info("  Dtype:       %s", cfg.torch_dtype)
+    logger.info("  Output:      %s", cfg.raw_responses_dir)
     logger.info("=" * 60)
 
     runner = HuggingFaceRunner(cfg)
@@ -195,6 +223,14 @@ def main():
                         help="Number of repetitions per prompt (default: 20)")
     parser.add_argument("--temp", type=float, default=None,
                         help="Sampling temperature (default: 0.7)")
+    parser.add_argument("--topic", type=str, default=None,
+                        choices=["healthcare", "climate", "software"],
+                        help="Prompt topic (default: healthcare)")
+    parser.add_argument("--experiment", type=str, default=None,
+                        help="Experiment name — organises results into subdirectory")
+    parser.add_argument("--model-set", type=str, default=None,
+                        choices=["original", "new", "all", "tempsweep"],
+                        help="Predefined model set (default: all)")
     parser.add_argument("--models", type=str, default=None,
                         help="Comma-separated HuggingFace model IDs (overrides defaults)")
 

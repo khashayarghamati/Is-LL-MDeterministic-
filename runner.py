@@ -214,7 +214,7 @@ class HuggingFaceRunner:
             logger.warning("No models selected for tier=%s", tier)
             return
 
-        all_prompts = get_all_prompts()
+        all_prompts = get_all_prompts(topic=self.cfg.topic)
         total_models = len(models)
 
         for mi, model in enumerate(models, 1):

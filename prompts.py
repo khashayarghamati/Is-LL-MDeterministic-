@@ -1,11 +1,10 @@
 """
-20 Prompts on "AI in Healthcare" — same topic, varied angles.
+Multi-topic prompts for the LLM Stochasticity Exploration Experiment.
 
+Each topic has 10–20 prompts covering different angles.
 Every prompt shares a single OUTPUT_TEMPLATE so responses are structurally
-comparable across models and repetitions.
+comparable across models, repetitions, and topics.
 """
-
-TOPIC = "Artificial Intelligence in Healthcare"
 
 OUTPUT_TEMPLATE = """
 You must respond ONLY with a valid JSON object. Do not include any text,
@@ -202,6 +201,191 @@ PROMPTS: list[dict[str, str]] = [
 ]
 
 
+
+# ---------------------------------------------------------------------------
+# 10 prompts — Climate Change & Environmental Policy
+# ---------------------------------------------------------------------------
+CLIMATE_PROMPTS: list[dict[str, str]] = [
+    {
+        "id": "C01",
+        "angle": "General overview",
+        "question": (
+            "Explain the current scientific understanding of climate change, "
+            "its primary causes, and the projected impacts on global ecosystems."
+        ),
+    },
+    {
+        "id": "C02",
+        "angle": "Renewable energy transition",
+        "question": (
+            "Analyze the challenges and opportunities in transitioning from "
+            "fossil fuels to renewable energy sources on a global scale."
+        ),
+    },
+    {
+        "id": "C03",
+        "angle": "Carbon capture",
+        "question": (
+            "Discuss the viability and scalability of carbon capture and "
+            "storage technologies as a strategy to mitigate climate change."
+        ),
+    },
+    {
+        "id": "C04",
+        "angle": "Agriculture and food security",
+        "question": (
+            "Evaluate how climate change is affecting global agriculture, "
+            "food supply chains, and strategies for ensuring food security."
+        ),
+    },
+    {
+        "id": "C05",
+        "angle": "Biodiversity loss",
+        "question": (
+            "Describe the relationship between climate change and biodiversity "
+            "loss, including impacts on marine and terrestrial species."
+        ),
+    },
+    {
+        "id": "C06",
+        "angle": "Economic impact",
+        "question": (
+            "Assess the economic costs of climate change, including damage to "
+            "infrastructure, healthcare burdens, and impacts on labor productivity."
+        ),
+    },
+    {
+        "id": "C07",
+        "angle": "Policy frameworks",
+        "question": (
+            "Analyze the effectiveness of international climate agreements such "
+            "as the Paris Agreement in driving meaningful emission reductions."
+        ),
+    },
+    {
+        "id": "C08",
+        "angle": "Urban resilience",
+        "question": (
+            "Evaluate how cities can build resilience against climate change "
+            "through urban planning, green infrastructure, and adaptation strategies."
+        ),
+    },
+    {
+        "id": "C09",
+        "angle": "Climate justice",
+        "question": (
+            "Discuss the concept of climate justice and how the impacts of "
+            "climate change disproportionately affect vulnerable and developing nations."
+        ),
+    },
+    {
+        "id": "C10",
+        "angle": "Water resources",
+        "question": (
+            "Explain how climate change is altering global water cycles, "
+            "threatening freshwater availability, and increasing flood and drought risks."
+        ),
+    },
+]
+
+# ---------------------------------------------------------------------------
+# 10 prompts — Software Engineering & Technology
+# ---------------------------------------------------------------------------
+SOFTWARE_PROMPTS: list[dict[str, str]] = [
+    {
+        "id": "S01",
+        "angle": "General overview",
+        "question": (
+            "Explain the current state of modern software engineering practices "
+            "and how they have evolved to meet the demands of large-scale systems."
+        ),
+    },
+    {
+        "id": "S02",
+        "angle": "DevOps and CI/CD",
+        "question": (
+            "Analyze how DevOps practices and continuous integration/continuous "
+            "deployment pipelines improve software delivery speed and reliability."
+        ),
+    },
+    {
+        "id": "S03",
+        "angle": "Cloud computing",
+        "question": (
+            "Discuss the impact of cloud computing on software architecture, "
+            "scalability, and the economics of running production systems."
+        ),
+    },
+    {
+        "id": "S04",
+        "angle": "Cybersecurity",
+        "question": (
+            "Evaluate the growing challenges of cybersecurity in software "
+            "development and strategies for building secure applications."
+        ),
+    },
+    {
+        "id": "S05",
+        "angle": "Open source",
+        "question": (
+            "Describe the role of open-source software in the modern technology "
+            "ecosystem and its impact on innovation and collaboration."
+        ),
+    },
+    {
+        "id": "S06",
+        "angle": "Technical debt",
+        "question": (
+            "Assess the causes and consequences of technical debt in software "
+            "projects and effective strategies for managing and reducing it."
+        ),
+    },
+    {
+        "id": "S07",
+        "angle": "Microservices architecture",
+        "question": (
+            "Analyze the trade-offs between microservices and monolithic "
+            "architectures for building and maintaining complex software systems."
+        ),
+    },
+    {
+        "id": "S08",
+        "angle": "Testing and quality",
+        "question": (
+            "Evaluate modern approaches to software testing, including automated "
+            "testing, property-based testing, and their impact on software quality."
+        ),
+    },
+    {
+        "id": "S09",
+        "angle": "AI-assisted development",
+        "question": (
+            "Discuss how artificial intelligence tools are transforming software "
+            "development workflows, including code generation, review, and debugging."
+        ),
+    },
+    {
+        "id": "S10",
+        "angle": "Ethics in technology",
+        "question": (
+            "Analyze the ethical responsibilities of software engineers in "
+            "designing systems that affect privacy, fairness, and societal well-being."
+        ),
+    },
+]
+
+# ---------------------------------------------------------------------------
+# Topic registry — maps topic names to their prompt lists
+# ---------------------------------------------------------------------------
+TOPIC_PROMPTS = {
+    "healthcare": PROMPTS,
+    "climate": CLIMATE_PROMPTS,
+    "software": SOFTWARE_PROMPTS,
+}
+
+AVAILABLE_TOPICS = list(TOPIC_PROMPTS.keys())
+
+
 def build_full_prompt(prompt_entry: dict) -> str:
     """Combine a prompt question with the standard output template."""
     return (
@@ -210,9 +394,16 @@ def build_full_prompt(prompt_entry: dict) -> str:
     )
 
 
-def get_all_prompts() -> list[tuple[str, str, str]]:
-    """Return list of (prompt_id, angle, full_prompt_text)."""
+def get_all_prompts(topic: str = "healthcare") -> list[tuple[str, str, str]]:
+    """
+    Return list of (prompt_id, angle, full_prompt_text).
+
+    Args:
+        topic: One of "healthcare", "climate", "software".
+               Defaults to "healthcare" for backward compatibility.
+    """
+    prompts = TOPIC_PROMPTS.get(topic, PROMPTS)
     return [
         (p["id"], p["angle"], build_full_prompt(p))
-        for p in PROMPTS
+        for p in prompts
     ]
