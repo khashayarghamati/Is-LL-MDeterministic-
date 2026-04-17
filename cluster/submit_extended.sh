@@ -27,18 +27,8 @@
 set -euo pipefail
 
 BEEGFS_BASE="/beegfs/general/kg23aay"
-CONDA_DIR="${BEEGFS_BASE}/miniconda3"
 PROJECT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 LOG_DIR="${BEEGFS_BASE}/stochastic_exploration/logs"
-
-# Activate conda (needed for env validation)
-source "${CONDA_DIR}/etc/profile.d/conda.sh"
-conda activate stochastic_exp
-
-# Load .env
-if [ -f "${PROJECT_DIR}/.env" ]; then
-    set -a; source "${PROJECT_DIR}/.env"; set +a
-fi
 
 cd "${PROJECT_DIR}"
 mkdir -p "${LOG_DIR}"
@@ -150,7 +140,7 @@ if [[ " ${GROUPS[*]} " =~ " topics " ]]; then
         EXP="${TOPIC}_T0.7"
         TOPIC_JOBS=()
         for TIER in 1 2 3 4; do
-            JID=$(submit_tier "${TIER}" "${TOPIC}" "0.7" "${EXP}" "all" "ext-${TOPIC}-t${TIER}")
+            JID=$(submit_tier "${TIER}" "${TOPIC}" "0.7" "${EXP}" "original" "ext-${TOPIC}-t${TIER}")
             TOPIC_JOBS+=("${JID}")
             echo "  ${EXP} tier ${TIER}: job ${JID}"
         done
@@ -207,6 +197,7 @@ fi
 # =========================================================================
 if [ ${#ALL_EVAL_JOBS[@]} -gt 0 ]; then
     CROSS_DEP=$(IFS=:; echo "${ALL_EVAL_JOBS[*]}")
+    CONDA_DIR="${BEEGFS_BASE}/miniconda3"
     CROSS_JID=$(sbatch \
         --job-name="cross-analysis" \
         --partition="${PARTITION}" \
@@ -220,7 +211,7 @@ if [ ${#ALL_EVAL_JOBS[@]} -gt 0 ]; then
         --mail-user="${EMAIL}" \
         --dependency="afterany:${CROSS_DEP}" \
         --export=ALL \
-        --wrap="cd ${PROJECT_DIR} && source ${CONDA_DIR}/etc/profile.d/conda.sh && conda activate stochastic_exp && python3 cross_analyzer.py" \
+        --wrap="source ${CONDA_DIR}/etc/profile.d/conda.sh && conda activate stochastic_exp && cd ${PROJECT_DIR} && python3 cross_analyzer.py" \
         | awk '{print $NF}')
     echo "--- Cross-experiment analysis: job ${CROSS_JID} ---"
     echo "    Depends on all eval jobs: ${ALL_EVAL_JOBS[*]}"
